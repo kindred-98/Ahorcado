@@ -1,0 +1,83 @@
+# ============================================================
+#  .gitignore — El Ahorcado Medieval
+#  Archivos y carpetas ignorados por Git
+# ============================================================
+
+# ── Base de datos SQLite ─────────────────────────────────────
+# La BD se genera automáticamente al iniciar el juego.
+# No se versiona para evitar conflictos entre entornos.
+*.db
+*.sqlite
+*.sqlite3
+data/
+
+# ── Python ───────────────────────────────────────────────────
+# Bytecode compilado
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# Distribuciones y empaquetado
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+wheels/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+
+# ── Entornos virtuales ───────────────────────────────────────
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# ── IDEs y editores ──────────────────────────────────────────
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim / Neovim
+*.swp
+*.swo
+*~
+
+# ── Sistema operativo ────────────────────────────────────────
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# ── Logs y temporales ────────────────────────────────────────
+*.log
+*.tmp
+*.bak
+*.orig
+
+# ── Tests y cobertura ────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/

@@ -1,0 +1,21 @@
+# ============================================================
+#  requirements.txt — El Ahorcado Medieval
+#  Dependencias del proyecto
+# ============================================================
+
+# sqlite3 viene incluido en la librería estándar de Python 3.
+# No requiere instalación adicional.
+#
+# Para instalar dependencias futuras:
+#   pip install -r requirements.txt
+
+# ── Librería estándar (incluida en Python 3.12+) ─────────────
+# sqlite3      — Base de datos embebida
+# os           — Interacción con el sistema operativo
+# sys          — Parámetros del sistema
+# random       — Selección aleatoria de palabras
+# unicodedata  — Normalización de caracteres (tildes)
+
+# ── Sin dependencias externas requeridas ─────────────────────
+# Este proyecto no requiere paquetes de terceros.
+# Funciona con Python 3.12+ sin instalación adicional.
