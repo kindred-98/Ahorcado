@@ -11,11 +11,11 @@ Responsabilidades:
     - Componer la escena completa: cabecera + estado ASCII.
 
 Importaciones necesarias:
-    from interfaz.dibujo import ESTADOS, MAXIMO_FALLOS
+    from src.interfaz.dibujo import ESTADOS, MAXIMO_FALLOS
 """
 
 import os
-from interfaz.dibujo import ESTADOS, MAXIMO_FALLOS
+from src.interfaz.dibujo import ESTADOS, MAXIMO_FALLOS
 
 
 # ── Constantes visuales ───────────────────────────────────────

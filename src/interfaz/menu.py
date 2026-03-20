@@ -10,10 +10,10 @@ Responsabilidades:
       ver palabras o salir.
 
 Importaciones necesarias:
-    from interfaz.pantalla import limpiar_pantalla, mostrar_mensaje, mostrar_error
+    from src.interfaz.pantalla import limpiar_pantalla, mostrar_mensaje, mostrar_error
 """
 
-from interfaz.pantalla import limpiar_pantalla, mostrar_mensaje, mostrar_error
+from src.interfaz.pantalla import limpiar_pantalla, mostrar_mensaje, mostrar_error
 
 
 # ── Constantes de opciones ────────────────────────────────────

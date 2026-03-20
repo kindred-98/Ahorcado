@@ -10,8 +10,8 @@ Uso:
     python ahorcado.py
 """
 
-from base_datos.inicializar import inicializar_base_datos
-from interfaz.menu import ejecutar_menu_principal
+from src.base_datos.inicializar import inicializar_base_datos
+from src.interfaz.menu import ejecutar_menu_principal
 
 
 def main() -> None:
