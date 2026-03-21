@@ -29,7 +29,7 @@ from src.juego.estado import (
     letra_ya_usada,
     obtener_letras_usadas,
 )
-from src.base_datos.consultas import obtener_palabra_aleatoria
+from src.base_datos.consultas.obtener_palabra_aleatoria import obtener_palabra_aleatoria
 from src.interfaz.pantalla import (
     mostrar_escena,
     mostrar_mensaje,

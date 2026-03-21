@@ -6,7 +6,7 @@ Tests para src/juego/logica/intentos_restantes.py
 
 from src.juego.estado.clase_estado_partida import EstadoPartida
 from src.juego.logica.intentos_restantes    import intentos_restantes
-from src.interfaz.dibujo                    import MAXIMO_FALLOS
+from src.interfaz.dibujo.maximo_fallos              import MAXIMO_FALLOS
 
 
 def test_cero_fallos_devuelve_maximo():

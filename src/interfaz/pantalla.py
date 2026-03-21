@@ -15,7 +15,9 @@ Importaciones necesarias:
 """
 
 import os
-from src.interfaz.dibujo import ESTADOS, MAXIMO_FALLOS
+
+from src.interfaz.dibujo.estados      import ESTADOS
+from src.interfaz.dibujo.maximo_fallos import MAXIMO_FALLOS
 
 
 # ── Constantes visuales ───────────────────────────────────────

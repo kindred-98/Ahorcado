@@ -9,7 +9,7 @@ from src.interfaz.pantalla import (
     mostrar_mensaje,
     mostrar_error,
 )
-from src.interfaz.dibujo import MAXIMO_FALLOS
+from src.interfaz.dibujo.maximo_fallos import MAXIMO_FALLOS
 
 
 # Accedemos a las funciones privadas directamente para testearlas

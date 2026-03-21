@@ -10,7 +10,9 @@ Uso:
     python ahorcado.py
 """
 
-from src.base_datos.inicializar import inicializar_base_datos
+
+
+from src.base_datos.inicializar.inicializar_base_datos import inicializar_base_datos
 from src.interfaz.menu import ejecutar_menu_principal
 
 

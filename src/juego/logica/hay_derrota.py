@@ -5,7 +5,7 @@ Función para detectar si el jugador ha perdido la partida.
 """
 
 from src.juego.estado.clase_estado_partida import EstadoPartida
-from src.interfaz.dibujo                   import MAXIMO_FALLOS
+from src.interfaz.dibujo.maximo_fallos import MAXIMO_FALLOS
 
 
 def hay_derrota(estado: EstadoPartida) -> bool:

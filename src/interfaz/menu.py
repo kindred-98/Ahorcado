@@ -13,13 +13,15 @@ Importaciones necesarias:
     from src.interfaz.menu import ejecutar_menu_principal
 """
 
-from src.interfaz.pantalla     import limpiar_pantalla, mostrar_mensaje, mostrar_error
-from src.juego.bucle            import iniciar_partida
-from src.base_datos.consultas   import obtener_todas_las_palabras, obtener_categorias
-from src.base_datos.insercion   import insertar_palabra, palabra_ya_existe
+from src.interfaz.pantalla import limpiar_pantalla, mostrar_mensaje, mostrar_error
+from src.juego.bucle import iniciar_partida
+from src.base_datos.consultas.obtener_todas_las_palabras import obtener_todas_las_palabras
+from src.base_datos.consultas.obtener_categorias import obtener_categorias
+from src.base_datos.insercion.insertar_palabra import insertar_palabra
+from src.base_datos.insercion.palabra_ya_existe import palabra_ya_existe
 
 
-from src.validaciones.palabra.validar_palabra   import validar_palabra
+from src.validaciones.palabra.validar_palabra import validar_palabra
 from src.validaciones.palabra.validar_categoria import validar_categoria
 from src.validaciones.palabra.validar_dificultad import validar_dificultad
 

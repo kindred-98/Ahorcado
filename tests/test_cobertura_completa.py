@@ -15,9 +15,13 @@ Cubre:
 import sqlite3
 import pytest
 
-from src.base_datos.insercion  import insertar_palabra, palabra_ya_existe, _normalizar_dificultad
-from src.base_datos.consultas  import obtener_palabra_aleatoria, obtener_todas_las_palabras, obtener_categorias
-from src.base_datos.inicializar import inicializar_base_datos
+from src.base_datos.insercion.insertar_palabra import insertar_palabra
+from src.base_datos.insercion.palabra_ya_existe import palabra_ya_existe
+from src.base_datos.insercion.normalizar_dificultad import _normalizar_dificultad
+from src.base_datos.consultas.obtener_palabra_aleatoria import obtener_palabra_aleatoria
+from src.base_datos.consultas.obtener_todas_las_palabras import obtener_todas_las_palabras
+from src.base_datos.consultas.obtener_categorias import obtener_categorias
+from src.base_datos.inicializar.inicializar_base_datos import inicializar_base_datos
 from src.interfaz.pantalla     import mostrar_escena
 from src.validaciones.letra.normalizar_caracter import _normalizar_caracter
 
@@ -44,13 +48,13 @@ def test_normalizar_dificultad_con_espacios():
 def test_insertar_palabra_error_bd(bd_prueba, monkeypatch):
     def conexion_fallida():
         raise sqlite3.Error("Error simulado")
-    monkeypatch.setattr("src.base_datos.insercion.obtener_conexion", conexion_fallida)
+    monkeypatch.setattr("src.base_datos.insercion.insertar_palabra.obtener_conexion", conexion_fallida)
     assert insertar_palabra("unicornio", "animales", "facil") is False
 
 def test_palabra_ya_existe_error_bd(bd_prueba, monkeypatch):
     def conexion_fallida():
         raise sqlite3.Error("Error simulado")
-    monkeypatch.setattr("src.base_datos.insercion.obtener_conexion", conexion_fallida)
+    monkeypatch.setattr("src.base_datos.insercion.palabra_ya_existe.obtener_conexion", conexion_fallida)
     assert palabra_ya_existe("dragon") is False
 
 
@@ -59,19 +63,19 @@ def test_palabra_ya_existe_error_bd(bd_prueba, monkeypatch):
 def test_obtener_palabra_aleatoria_error_bd(bd_prueba, monkeypatch):
     def conexion_fallida():
         raise sqlite3.Error("Error simulado")
-    monkeypatch.setattr("src.base_datos.consultas.obtener_conexion", conexion_fallida)
+    monkeypatch.setattr("src.base_datos.consultas.obtener_palabra_aleatoria.obtener_conexion", conexion_fallida)
     assert obtener_palabra_aleatoria() is None
 
 def test_obtener_todas_error_bd(bd_prueba, monkeypatch):
     def conexion_fallida():
         raise sqlite3.Error("Error simulado")
-    monkeypatch.setattr("src.base_datos.consultas.obtener_conexion", conexion_fallida)
+    monkeypatch.setattr("src.base_datos.consultas.obtener_todas_las_palabras.obtener_conexion", conexion_fallida)
     assert obtener_todas_las_palabras() == []
 
 def test_obtener_categorias_error_bd(bd_prueba, monkeypatch):
     def conexion_fallida():
         raise sqlite3.Error("Error simulado")
-    monkeypatch.setattr("src.base_datos.consultas.obtener_conexion", conexion_fallida)
+    monkeypatch.setattr("src.base_datos.consultas.obtener_categorias.obtener_conexion", conexion_fallida)
     assert obtener_categorias() == []
 
 
@@ -80,7 +84,7 @@ def test_obtener_categorias_error_bd(bd_prueba, monkeypatch):
 def test_inicializar_error_bd(bd_prueba, monkeypatch):
     def conexion_fallida():
         raise sqlite3.Error("Error simulado")
-    monkeypatch.setattr("src.base_datos.inicializar.obtener_conexion", conexion_fallida)
+    monkeypatch.setattr("src.base_datos.inicializar.inicializar_base_datos.obtener_conexion", conexion_fallida)
     inicializar_base_datos()  # no debe lanzar excepción
 
 

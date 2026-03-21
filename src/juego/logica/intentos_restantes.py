@@ -5,7 +5,7 @@ Función para calcular los intentos restantes del jugador.
 """
 
 from src.juego.estado.clase_estado_partida import EstadoPartida
-from src.interfaz.dibujo                   import MAXIMO_FALLOS
+from src.interfaz.dibujo.maximo_fallos import MAXIMO_FALLOS
 
 
 def intentos_restantes(estado: EstadoPartida) -> int:

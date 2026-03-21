@@ -1,24 +1,10 @@
 """
-dibujo.py
-=========
-Módulo que contiene los 7 estados del arte ASCII del
-Ahorcado Medieval.
-
+estados.py
+==========
+Los 7 estados ASCII del Ahorcado Medieval.
 Cada estado representa un número de fallos acumulados (0-6).
-El árbol ocupa el lado izquierdo de la escena, la rama
-se extiende hacia el centro y la figura cuelga separada
-del tronco con una cuerda larga.
-
-Constantes exportadas:
-    ESTADOS        — lista con los 7 dibujos ASCII
-    MAXIMO_FALLOS  — número máximo de fallos permitidos (6)
 """
 
-# ── Constante de control ──────────────────────────────────────
-MAXIMO_FALLOS: int = 6
-
-
-# ── 7 estados ASCII ───────────────────────────────────────────
 ESTADOS: list[str] = [
 
 # ══════════════════════════════════════════════════════════════
