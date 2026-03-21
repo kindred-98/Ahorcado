@@ -29,11 +29,12 @@ que cuelga una figura, que cae al suelo si se agotan los intentos.
 ## 📝 Documentación IA
 
 El proceso de desarrollo asistido por IA está documentado en
-[`docs/asistencia_ia.md`](docs/asistencia_ia.md) siguiendo el método **SPECAR**.
+[`docs`](docs) siguiendo el método **SPECAR**.
 
 ---
 
 ## 👤 Autor
 
-Desarrollado como ejercicio práctico, actualemente bajo desarrollo. **Estrategias de Generación de Código con IA** 
+Desarrollado como ejercicio práctico, actualemente bajo desarrollo.
+**Estrategias de Generación de Código con IA** 
 Dicampus

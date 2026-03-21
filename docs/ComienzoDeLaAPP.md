@@ -199,6 +199,8 @@ Versión final del archivo `prueba_ahorcado.py` sin luna, sin espadachín, sin w
 
 # Adjunto codigo con el que comence la app.
 
+- Estara comentado por lo tanto para lograr verlo tendran que bajarse el repositorio o verlo en formado code.
+
 <!-- # ============================================================
 #   PRUEBA DE ARTE ASCII - EL AHORCADO MEDIEVAL
 #   Navega entre estados: ingresa un número del 0 al 6
