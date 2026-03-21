@@ -19,7 +19,7 @@ from src.base_datos.insercion  import insertar_palabra, palabra_ya_existe, _norm
 from src.base_datos.consultas  import obtener_palabra_aleatoria, obtener_todas_las_palabras, obtener_categorias
 from src.base_datos.inicializar import inicializar_base_datos
 from src.interfaz.pantalla     import mostrar_escena
-from src.validaciones.letra    import _normalizar_caracter
+from src.validaciones.letra.normalizar_caracter import _normalizar_caracter
 
 
 # ── Tests _normalizar_dificultad ──────────────────────────────

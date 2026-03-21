@@ -23,3 +23,51 @@ pytest tests/ -v
 ```
 
 Para verificar que nada se rompe antes de seguir con el siguiente.
+
+
+
+Tiene todo el sentido, consistencia en todo el proyecto. Si el código se organiza un archivo por función, los tests igual.
+
+tests/
+├── __init__.py
+├── conftest.py
+├── validaciones/
+│   ├── __init__.py
+│   ├── letra/
+│   │   ├── __init__.py
+│   │   ├── test_validar_letra.py
+│   │   └── test_normalizar_caracter.py
+│   └── palabra/
+│       ├── __init__.py
+│       ├── test_validar_palabra.py
+│       ├── test_validar_categoria.py
+│       └── test_validar_dificultad.py
+├── juego/
+│   ├── __init__.py
+│   ├── estado/
+│   │   ├── __init__.py
+│   │   ├── test_crear_estado_inicial.py
+│   │   ├── test_construir_palabra_oculta.py
+│   │   ├── test_registrar_letra.py
+│   │   ├── test_letra_ya_usada.py
+│   │   └── test_obtener_letras_usadas.py
+│   └── logica/
+│       ├── __init__.py
+│       ├── test_hay_victoria.py
+│       ├── test_hay_derrota.py
+│       ├── test_letra_en_palabra.py
+│       ├── test_intentos_restantes.py
+│       └── test_partida_terminada.py
+├── base_datos/
+│   ├── __init__.py
+│   ├── test_conexion.py
+│   ├── inicializar/
+│   │   └── ...
+│   ├── consultas/
+│   │   └── ...
+│   └── insercion/
+│       └── ...
+└── interfaz/
+    ├── __init__.py
+    └── pantalla/
+        └── ...

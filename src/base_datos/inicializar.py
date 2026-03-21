@@ -17,7 +17,8 @@ Importaciones necesarias:
 
 import sqlite3
 
-from src.base_datos.conexion import obtener_conexion
+# después
+from src.base_datos.conexion.obtener_conexion import obtener_conexion
 
 
 # ── Palabras iniciales ────────────────────────────────────────

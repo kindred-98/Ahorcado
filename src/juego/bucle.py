@@ -15,6 +15,11 @@ Responsabilidades:
 Importaciones necesarias:
     from src.juego.bucle import iniciar_partida
 """
+# después
+from src.juego.logica.hay_victoria       import hay_victoria
+from src.juego.logica.partida_terminada  import partida_terminada
+from src.juego.logica.intentos_restantes import intentos_restantes
+
 
 from src.juego.estado import (
     EstadoPartida,
@@ -23,11 +28,6 @@ from src.juego.estado import (
     registrar_letra,
     letra_ya_usada,
     obtener_letras_usadas,
-)
-from src.juego.logica import (
-    hay_victoria,
-    partida_terminada,
-    intentos_restantes,
 )
 from src.base_datos.consultas import obtener_palabra_aleatoria
 from src.interfaz.pantalla import (

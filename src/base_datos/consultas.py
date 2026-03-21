@@ -16,7 +16,8 @@ Importaciones necesarias:
 import sqlite3
 from typing import Optional
 
-from src.base_datos.conexion import obtener_conexion
+# después
+from src.base_datos.conexion.obtener_conexion import obtener_conexion
 
 
 # ── Funciones públicas ────────────────────────────────────────

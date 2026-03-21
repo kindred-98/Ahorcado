@@ -16,7 +16,7 @@ Fixtures disponibles:
 import sqlite3
 import pytest
 
-from src.juego.estado import EstadoPartida
+from src.juego.estado.clase_estado_partida import EstadoPartida
 
 
 # ── Datos de prueba ───────────────────────────────────────────
@@ -56,12 +56,10 @@ def bd_prueba(tmp_path, monkeypatch):
     """
     ruta_bd_temporal = tmp_path / "prueba.db"
 
-    import src.base_datos.conexion as modulo_conexion
-    monkeypatch.setattr(
-        modulo_conexion,
-        "RUTA_BASE_DATOS",
-        str(ruta_bd_temporal),
-    )
+    import src.base_datos.conexion.ruta_base_datos as modulo_ruta
+    import src.base_datos.conexion.obtener_conexion as modulo_conexion
+    monkeypatch.setattr(modulo_ruta,    "RUTA_BASE_DATOS", str(ruta_bd_temporal))
+    monkeypatch.setattr(modulo_conexion, "RUTA_BASE_DATOS", str(ruta_bd_temporal))
 
     conexion = sqlite3.connect(str(ruta_bd_temporal))
     conexion.row_factory = sqlite3.Row
