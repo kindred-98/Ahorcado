@@ -1,7 +1,8 @@
 # ⚔️ EL AHORCADO MEDIEVAL
-## Documentación de Asistencia IA Dicampus — Método SPECAR
-
+## Documentación de Asistencia IA — Método SPECAR
 ## FASE 2 — Arquitectura y modularización
+> Módulo 2 · Estrategias de Generación de Código con IA · Dicampus
+
 
 ---
 

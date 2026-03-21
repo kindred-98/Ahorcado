@@ -1,5 +1,7 @@
 # ⚔️ EL AHORCADO MEDIEVAL
-## Documentación de Asistencia IA Dicampus — Método SPECAR
+## Documentación de Asistencia IA — Método SPECAR
+## FASE 1 — Arte ASCII
+> Módulo 2 · Estrategias de Generación de Código con IA · Dicampus
 
 ---
 
@@ -9,10 +11,6 @@ Este documento recoge el proceso completo de asistencia con IA para desarrollar
 el **Ahorcado Medieval**, desde la idea inicial hasta la arquitectura modular
 del proyecto. Se documenta cada interacción siguiendo el método SPECAR:
 **Situación, Problema, Exploración, Cambios, Acuerdo y Resultado.**
-
----
-
-## FASE 1 — Arte ASCII
 
 ---
 
