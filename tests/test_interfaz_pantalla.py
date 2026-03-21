@@ -4,7 +4,6 @@ test_interfaz_pantalla.py
 Tests para src/interfaz/pantalla.py
 """
 
-import pytest
 from src.interfaz.pantalla import (
     construir_cabecera,
     mostrar_mensaje,

@@ -4,7 +4,6 @@ test_validaciones_letra.py
 Tests unitarios para src/validaciones/letra.py
 """
 
-import pytest
 from src.validaciones.letra import validar_letra
 
 

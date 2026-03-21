@@ -4,7 +4,6 @@ test_juego_logica.py
 Tests unitarios para src/juego/logica.py
 """
 
-import pytest
 from src.juego.estado import EstadoPartida
 from src.juego.logica import (
     hay_victoria,

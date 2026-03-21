@@ -4,7 +4,6 @@ test_juego_estado.py
 Tests unitarios para src/juego/estado.py
 """
 
-import pytest
 from src.juego.estado import (
     EstadoPartida,
     crear_estado_inicial,

@@ -4,7 +4,6 @@ test_validaciones_palabra.py
 Tests unitarios para src/validaciones/palabra.py
 """
 
-import pytest
 from src.validaciones.palabra import (
     validar_palabra,
     validar_categoria,

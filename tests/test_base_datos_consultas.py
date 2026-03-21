@@ -4,7 +4,6 @@ test_base_datos_consultas.py
 Tests para src/base_datos/consultas.py
 """
 
-import pytest
 from src.base_datos.consultas import (
     obtener_palabra_aleatoria,
     obtener_todas_las_palabras,
