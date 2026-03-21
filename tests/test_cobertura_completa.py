@@ -22,7 +22,7 @@ from src.base_datos.consultas.obtener_palabra_aleatoria import obtener_palabra_a
 from src.base_datos.consultas.obtener_todas_las_palabras import obtener_todas_las_palabras
 from src.base_datos.consultas.obtener_categorias import obtener_categorias
 from src.base_datos.inicializar.inicializar_base_datos import inicializar_base_datos
-from src.interfaz.pantalla     import mostrar_escena
+from src.interfaz.pantalla.mostrar_escena import mostrar_escena
 from src.validaciones.letra.normalizar_caracter import _normalizar_caracter
 
 

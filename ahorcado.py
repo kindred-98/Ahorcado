@@ -13,7 +13,7 @@ Uso:
 
 
 from src.base_datos.inicializar.inicializar_base_datos import inicializar_base_datos
-from src.interfaz.menu import ejecutar_menu_principal
+from src.interfaz.menu.ejecutar_menu_principal import ejecutar_menu_principal
 
 
 def main() -> None:
