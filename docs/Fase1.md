@@ -7,29 +7,29 @@
 
 ## Introducción
 
-Este documento recoge el proceso completo de asistencia con IA para desarrollar
-el **Ahorcado Medieval**, desde la idea inicial hasta la arquitectura modular
-del proyecto. Se documenta cada interacción siguiendo el método SPECAR:
-**Situación, Problema, Exploración, Cambios, Acuerdo y Resultado.**
+Este documento recoge el proceso de asistencia con IA para diseñar y refinar
+el arte ASCII del **Ahorcado Medieval**. Se documenta cada interacción
+siguiendo el método SPECAR: **Situación, Problema, Exploración, Cambios,
+Acuerdo y Resultado.**
 
 ---
 
-### INTERACCIÓN 1 — Propuesta inicial del arte ASCII
+## INTERACCIÓN 1 — Propuesta inicial del arte ASCII
 
-#### 🔵 S — Situación
+### 🔵 S — Situación
 
 El ejercicio del Módulo 2 propone un Juego del Ahorcado con arte ASCII estándar
 (7 estados, horca clásica). El profesor da libertad para personalizar la
 implementación visual. Se dispone del PDF de referencia y una imagen de ejemplo
 de una app comercial del juego.
 
-#### 🔴 P — Problema
+### 🔴 P — Problema
 
 El arte ASCII genérico no aporta valor diferencial al repositorio de GitHub.
 Se necesita una propuesta visual más original que demuestre creatividad dentro
 del marco técnico del ejercicio (CLI con Python).
 
-#### 🟠 E — Exploración
+### 🟠 E — Exploración
 
 **Prompt enviado:**
 
@@ -44,7 +44,7 @@ del marco técnico del ejercicio (CLI con Python).
 
 La IA recomendó quedarse en CLI con ASCII.
 
-#### 🟢 C — Cambios
+### 🟢 C — Cambios
 
 Se pidió personalización sobre la propuesta base:
 
@@ -54,7 +54,7 @@ Se pidió personalización sobre la propuesta base:
 - Ambiente medieval.
 - Escena nocturna con luna y estrellas.
 
-#### 🔵 A — Acuerdo
+### 🔵 A — Acuerdo
 
 ✅ CLI con ASCII  
 ✅ Árbol con hojas  
@@ -63,7 +63,7 @@ Se pidió personalización sobre la propuesta base:
 ✅ Noche con luna y estrellas  
 ✅ Estado 6 con efecto de corte  
 
-#### 🟢 R — Resultado
+### 🟢 R — Resultado
 
 Se generó el primer `prueba_ahorcado.py` con los 7 estados y modo de navegación
 interactivo (número 0-6, opción `todos` y `salir`). Funcional pero el layout
@@ -71,60 +71,60 @@ no correspondía al boceto que se tenía en mente.
 
 ---
 
-### INTERACCIÓN 2 — Reposicionamiento de la escena
+## INTERACCIÓN 2 — Reposicionamiento de la escena
 
-#### 🔵 S — Situación
+### 🔵 S — Situación
 
 Se compartió un boceto dibujado a mano (imagen PNG) mostrando la distribución
 deseada. El primer resultado tenía el árbol y la figura mal posicionados.
 
-#### 🔴 P — Problema
+### 🔴 P — Problema
 
 - El colgado no estaba en el centro exacto.
 - El espadachín aparecía desde el estado 0 en vez del fallo 1.
 - El suelo no diferenciaba hierba de tierra.
 
-#### 🟠 E — Exploración
+### 🟠 E — Exploración
 
 **Prompt enviado:**
 
-> *"El espadachín aparece en el primer fallo. quiero una luna y quiero hierba.
+> *"El espadachín aparece en el primer fallo. Quiero una luna y quiero hierba
 > donde está el ahorcado y tierra donde está el espadachín. Colgado en el
 > centro exacto y no tan grande, mediano. Espadachín igual mediano."*
 
 La IA resumió el nuevo layout antes de reescribir para confirmar comprensión.
 
-#### 🟢 C — Cambios
+### 🟢 C — Cambios
 
 - Árbol a la izquierda con rama larga hacia el centro.
 - Figura colgada en el centro exacto, tamaño mediano.
 - Espadachín aparece solo a partir del estado 1.
 - Suelo con `/\/\` (hierba) bajo el colgado y `. . .` (tierra) bajo el espadachín.
 
-#### 🔵 A — Acuerdo
+### 🔵 A — Acuerdo
 
 ✅ Reescritura completa de los 7 estados con el nuevo layout.
 
-#### 🟢 R — Resultado
+### 🟢 R — Resultado
 
 Segunda versión generada. Layout mejorado respecto al boceto. Verificado sin
 errores de sintaxis ni warnings.
 
 ---
 
-### INTERACCIÓN 3 — Eliminar el espadachín
+## INTERACCIÓN 3 — Eliminar el espadachín
 
-#### 🔵 S — Situación
+### 🔵 S — Situación
 
 Con la segunda versión lista se revisó la escena. Dos personajes resultaban
 visualmente cargados y complicaban el ASCII.
 
-#### 🔴 P — Problema
+### 🔴 P — Problema
 
 El espadachín añadía complejidad innecesaria. La narrativa más impactante era
 que la cuerda se rompiera sola en el 6to fallo.
 
-#### 🟠 E — Exploración
+### 🟠 E — Exploración
 
 **Prompt enviado:**
 
@@ -133,36 +133,36 @@ que la cuerda se rompiera sola en el 6to fallo.
 
 La IA confirmó el nuevo plan antes de proceder.
 
-#### 🟢 C — Cambios
+### 🟢 C — Cambios
 
 - Eliminación completa del espadachín de todos los estados.
 - Estado 6 rediseñado: cuerda rota `~`, efecto `* SNAP! *` con estrellas `✦`.
 - Figura en pose de caída libre.
 
-#### 🔵 A — Acuerdo
+### 🔵 A — Acuerdo
 
 ✅ Reescritura manteniendo árbol, hierba, estrellas y cabecera.  
 ❌ Espadachín eliminado definitivamente.
 
-#### 🟢 R — Resultado
+### 🟢 R — Resultado
 
 Tercera versión más limpia y dramática. Sin warnings, sintaxis verificada.
 
 ---
 
-### INTERACCIÓN 4 — Eliminar la luna
+## INTERACCIÓN 4 — Eliminar la luna
 
-#### 🔵 S — Situación
+### 🔵 S — Situación
 
 La luna ASCII ocupaba 4 líneas en el lado derecho de cada estado, compitiendo
 visualmente con el árbol y la figura.
 
-#### 🔴 P — Problema
+### 🔴 P — Problema
 
 La luna con `( ' )` y `.' ~~~ '.` quedaba torpe visualmente. El cielo solo
-con estrellas es más elegante.
+con estrellas y puntos es más elegante.
 
-#### 🟠 E — Exploración
+### 🟠 E — Exploración
 
 **Prompt enviado:**
 
@@ -171,37 +171,37 @@ con estrellas es más elegante.
 La IA identificó que el bloque se repetía en los 6 primeros estados y procedió
 a reemplazarlos con `str_replace` individual.
 
-#### 🟢 C — Cambios
+### 🟢 C — Cambios
 
 - Eliminación del bloque de luna de los 7 estados.
 - Líneas reemplazadas por estrellas `✦` y puntos dispersos.
-- Se corrigieron warnings de escape convirtiéndolas a raw strings `r"""`.
+- Se corrigieron warnings de escape convirtiéndolos a raw strings `r"""`.
 
-#### 🔵 A — Acuerdo
+### 🔵 A — Acuerdo
 
 ✅ Reemplazo quirúrgico estado por estado.  
 ❌ Luna eliminada definitivamente.
 
-#### 🟢 R — Resultado
+### 🟢 R — Resultado
 
 Versión final del archivo `prueba_ahorcado.py` aprobada: sin luna, sin
 espadachín, sin warnings.
 
 ---
 
-### INTERACCIÓN 5 — Árbol más grande y figura separada del tronco
+## INTERACCIÓN 5 — Árbol más grande y figura separada del tronco
 
-#### 🔵 S — Situación
+### 🔵 S — Situación
 
 Al integrar el arte en la arquitectura modular, se revisó visualmente la escena
 y no convencía el tamaño del árbol ni la posición de la figura.
 
-#### 🔴 P — Problema
+### 🔴 P — Problema
 
 - El árbol era demasiado pequeño para la escena.
 - La cabeza de la figura aparecía pegada al tronco del árbol.
 
-#### 🟠 E — Exploración
+### 🟠 E — Exploración
 
 **Prompt enviado (con boceto anotado):**
 
@@ -210,7 +210,7 @@ y no convencía el tamaño del árbol ni la posición de la figura.
 Se compartió una captura del estado 1 con anotaciones en amarillo marcando
 dónde debía ir la figura.
 
-#### 🟢 C — Cambios
+### 🟢 C — Cambios
 
 - Árbol mucho más alto, ocupa casi toda la altura izquierda.
 - Rama rediseñada con doble línea para dar volumen.
@@ -218,16 +218,40 @@ dónde debía ir la figura.
 - Estado 6: mensaje cambiado a `⚔ Muerte por ahorcamiento . . . ⚔`.
 - Figura cayendo con pose desparramada (brazos y piernas abiertos).
 
-#### 🔵 A — Acuerdo
+### 🔵 A — Acuerdo
 
 ✅ Árbol más alto y ancho.  
 ✅ Cuerda larga, figura centrada y separada.  
 ✅ Mensaje `Muerte por ahorcamiento`.  
-✅ El alumno indicó que realizó cambios propios en el dibujo que no alteran la lógica.
+✅ El alumno realizó cambios propios en el dibujo que no alteran la lógica.
 
-#### 🟢 R — Resultado
+### 🟢 R — Resultado
 
 Archivo `dibujo.py` generado como módulo independiente en `src/interfaz/`.
 Sintaxis verificada, 7 estados confirmados.
 
 ---
+
+## Catálogo de funciones — Fase 1
+
+### `src/interfaz/dibujo.py`
+
+| Nombre | Tipo | Descripción |
+|---|---|---|
+| `ESTADOS` | `list[str]` | Lista con los 7 estados ASCII de la escena medieval |
+| `MAXIMO_FALLOS` | `int` | Constante con el máximo de fallos permitidos (6) |
+
+---
+
+## Resumen de decisiones — Fase 1
+
+| Elemento | Propuesto | Decisión |
+|---|---|---|
+| Plataforma | CLI o interfaz gráfica | ✅ CLI con ASCII |
+| Árbol | Horca clásica | ✅ Árbol con hojas grande |
+| Figura | Palitos simples | ✅ Figura medieval detallada |
+| Espadachín | Con disparo al estado 6 | ❌ Eliminado |
+| Estado 6 | Corte por espadachín | ✅ Cuerda rota sola + SNAP! |
+| Mensaje estado 6 | HAS SIDO DERROTADO | ✅ Muerte por ahorcamiento |
+| Luna | Luna grande ASCII | ❌ Eliminada |
+| Suelo | Línea uniforme | ✅ Hierba + tierra diferenciada |

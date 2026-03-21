@@ -1,6 +1,6 @@
 # ⚔️ EL AHORCADO MEDIEVAL
 ## Documentación de Asistencia IA — Método SPECAR
-### Fase 4 — Lógica del juego
+## FASE 4 — Lógica del juego
 > Módulo 2 · Estrategias de Generación de Código con IA · Dicampus
 
 ---

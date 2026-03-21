@@ -1,32 +1,39 @@
 # ⚔️ EL AHORCADO MEDIEVAL
 ## Documentación de Asistencia IA — Método SPECAR
-## FASE 3 — Base de datos modularo
+## FASE 3 — Base de datos modular
 > Módulo 2 · Estrategias de Generación de Código con IA · Dicampus
-
 
 ---
 
-### INTERACCIÓN 8 — Separación de base_datos en módulos
+## Introducción
 
-#### 🔵 S — Situación
+Este documento recoge el proceso de asistencia con IA para separar el módulo
+`base_datos.py` original en 4 archivos con responsabilidad única, y la
+corrección del error de imports que impedía ejecutar el proyecto.
+
+---
+
+## INTERACCIÓN 1 — Separación de base_datos en módulos
+
+### 🔵 S — Situación
 
 El archivo `base_datos.py` original tenía todas las operaciones juntas:
 conexión, creación de tabla, consultas e inserciones.
 
-#### 🔴 P — Problema
+### 🔴 P — Problema
 
 Seguía el mismo problema de la fase anterior: múltiples responsabilidades
 en un solo archivo. La conexión, la inicialización, las consultas y las
 inserciones son responsabilidades distintas que deben vivir separadas.
 
-#### 🟠 E — Exploración
+### 🟠 E — Exploración
 
 **Prompt enviado:**
 
 > *"Claro sigamos, comenzemos."*
 
 La IA propuso separar en 4 archivos siguiendo el principio de responsabilidad
-única, en este orden de implementación porque `conexion.py` es la base de todos:
+única, comenzando por `conexion.py` porque los otros tres dependen de él:
 
 | Archivo | Responsabilidad |
 |---|---|
@@ -41,7 +48,7 @@ porque `executemany()` las acepta nativamente, los datos son fijos y son
 más ligeras en memoria. Los diccionarios se reservan para los resultados
 de las consultas.
 
-#### 🟢 C — Cambios
+### 🟢 C — Cambios
 
 - `_construir_consulta_aleatoria()` extraída como función privada en
   `consultas.py` para no mezclar construcción SQL con ejecución.
@@ -49,14 +56,14 @@ de las consultas.
   duplicados antes de insertar desde la interfaz.
 - `_normalizar_dificultad()` añadida como validación interna en `insercion.py`.
 
-#### 🔵 A — Acuerdo
+### 🔵 A — Acuerdo
 
 ✅ Cuatro archivos con responsabilidad única.  
 ✅ Tuplas para datos fijos de inicialización.  
 ✅ Diccionarios para resultados de consultas (`dict(fila)`).  
-✅ Funciones privadas para lógica interna de cada módulo.  
+✅ Funciones privadas para lógica interna de cada módulo.
 
-#### 🟢 R — Resultado
+### 🟢 R — Resultado
 
 Cuatro archivos generados y verificados:
 
@@ -67,9 +74,9 @@ Cuatro archivos generados y verificados:
 
 ---
 
-### INTERACCIÓN 9 — Corrección de imports (ModuleNotFoundError)
+## INTERACCIÓN 2 — Corrección de imports (ModuleNotFoundError)
 
-#### 🔵 S — Situación
+### 🔵 S — Situación
 
 Al ejecutar `python ahorcado.py` desde la raíz del proyecto apareció el error:
 
@@ -77,13 +84,13 @@ Al ejecutar `python ahorcado.py` desde la raíz del proyecto apareció el error:
 ModuleNotFoundError: No module named 'base_datos'
 ```
 
-#### 🔴 P — Problema
+### 🔴 P — Problema
 
 `ahorcado.py` está en la raíz y los módulos dentro de `src/`. Los imports
 internos usaban rutas sin prefijo como `from base_datos.conexion` que Python
 no puede resolver cuando el punto de entrada está fuera de `src/`.
 
-#### 🟠 E — Exploración
+### 🟠 E — Exploración
 
 La IA propuso dos soluciones:
 
@@ -93,7 +100,7 @@ La IA propuso dos soluciones:
 Se intentó `python -m ahorcado` pero el error persistía porque los imports
 internos entre módulos de `src/` tampoco tenían el prefijo `src.`.
 
-#### 🟢 C — Cambios
+### 🟢 C — Cambios
 
 Se corrigieron los imports en todos los archivos afectados:
 
@@ -107,13 +114,13 @@ Se corrigieron los imports en todos los archivos afectados:
 | `pantalla.py` | `from interfaz.dibujo` | `from src.interfaz.dibujo` |
 | `menu.py` | `from interfaz.pantalla` | `from src.interfaz.pantalla` |
 
-#### 🔵 A — Acuerdo
+### 🔵 A — Acuerdo
 
 ✅ Prefijo `src.` en todos los imports del proyecto.  
 ✅ `__init__.py` vacíos en todas las carpetas de `src/`.  
 ✅ Ejecución con `python ahorcado.py` desde la raíz.
 
-#### 🟢 R — Resultado
+### 🟢 R — Resultado
 
 El proyecto arranca correctamente. Menú principal funcional. Las opciones
 de jugar, añadir palabra y ver palabras muestran placeholders `TODO` hasta
@@ -121,9 +128,7 @@ que se implemente `juego/`.
 
 ---
 
-## Catálogo de funciones generadas
-
----
+## Catálogo de funciones — Fase 3
 
 ### `src/base_datos/conexion.py`
 
@@ -164,47 +169,10 @@ que se implemente `juego/`.
 
 ---
 
-### `src/juego/` *(pendiente de implementar — Fase 4)*
-
-| Nombre | Módulo | Descripción |
-|---|---|---|
-| `EstadoPartida` | `estado.py` | Dataclass con la palabra, fallos y letras usadas |
-| `construir_palabra_oculta()` | `estado.py` | Genera la cadena con guiones y letras reveladas |
-| `verificar_letra()` | `logica.py` | Comprueba si la letra está en la palabra |
-| `hay_victoria()` | `logica.py` | Detecta si todas las letras han sido adivinadas |
-| `hay_derrota()` | `logica.py` | Detecta si se alcanzó el máximo de fallos |
-| `iniciar_partida()` | `bucle.py` | Bucle principal de una partida completa |
-
-> ⚠️ Estos módulos se implementarán en la siguiente fase.
-
----
-
-
-## Resumen de decisiones
+## Resumen de decisiones — Fase 3
 
 | Elemento | Propuesto | Decisión |
 |---|---|---|
 | Datos iniciales BD | Diccionarios | ✅ Tuplas (nativas de `executemany`) |
 | Resultados de consultas | Sin especificar | ✅ Diccionarios (`dict(fila)`) |
-
----
-
-## Estado de archivos
-
-| Archivo | Ruta | Estado |
-|---|---|---|
-| `dibujo.py` | `src/interfaz/dibujo.py` | ✅ Listo |
-| `pantalla.py` | `src/interfaz/pantalla.py` | ✅ Listo |
-| `menu.py` | `src/interfaz/menu.py` | ✅ Listo |
-| `ahorcado.py` | `ahorcado.py` | ✅ Listo |
-| `conexion.py` | `src/base_datos/conexion.py` | ✅ Listo |
-| `inicializar.py` | `src/base_datos/inicializar.py` | ✅ Listo |
-| `consultas.py` | `src/base_datos/consultas.py` | ✅ Listo |
-| `insercion.py` | `src/base_datos/insercion.py` | ✅ Listo |
-| `estado.py` | `src/juego/estado.py` | ⏳ Próximo |
-| `logica.py` | `src/juego/logica.py` | ⏳ Próximo |
-| `bucle.py` | `src/juego/bucle.py` | ⏳ Próximo |
-| `letra.py` | `src/validaciones/letra.py` | ⏳ Próximo |
-| `palabra.py` | `src/validaciones/palabra.py` | ⏳ Próximo |
-
-
+| Imports | Sin prefijo | ✅ Prefijo `src.` en todo el proyecto |

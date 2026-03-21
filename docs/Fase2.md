@@ -1,33 +1,41 @@
 # ⚔️ EL AHORCADO MEDIEVAL
 ## Documentación de Asistencia IA — Método SPECAR
-## FASE 2 — Arquitectura y modularización
+## FASE 2 — Arquitectura y módulos de interfaz
 > Módulo 2 · Estrategias de Generación de Código con IA · Dicampus
-
 
 ---
 
-### INTERACCIÓN 6 — Definición de la arquitectura modular
+## Introducción
 
-#### 🔵 S — Situación
+Este documento recoge el proceso de asistencia con IA para definir la
+arquitectura modular del proyecto y separar el `main.py` original en sus
+módulos correspondientes dentro de `src/interfaz/`.
+
+---
+
+## INTERACCIÓN 1 — Definición de la arquitectura modular
+
+### 🔵 S — Situación
 
 El `main.py` original tenía todo junto: estados ASCII, cabecera, limpiar
 pantalla, bucle de prueba y menú. El ejercicio iba creciendo y se necesitaba
 una estructura profesional antes de continuar.
 
-#### 🔴 P — Problema
+### 🔴 P — Problema
 
 Un solo archivo con todas las responsabilidades mezcladas no es mantenible,
 no permite commits incrementales limpios y no demuestra buenas prácticas
 para el repositorio de GitHub.
 
-#### 🟠 E — Exploración
+### 🟠 E — Exploración
 
 **Prompt enviado:**
 
 > *"Quiero cambiar todo mi main y mi base de datos y que todo lo que me des
 > sea en español, funciones variables todo todo y con buena nomenclatura
 > descriptiva. Quiero separar las cosas del main, quiero hacer carpetas y
-> archivo para cada función."*
+> archivo para cada función. No quiero todas las funciones juntas, si tenemos
+> que hacer 20 funciones y hacer 20 archivos se hacen."*
 
 **La IA propuso esta arquitectura:**
 
@@ -56,8 +64,6 @@ src/
 └── __init__.py
 ```
 
-#### 🟢 C — Cambios
-
 Se preguntó si los `__init__.py` debían exportar funciones o usar importaciones
 explícitas siempre.
 
@@ -65,35 +71,40 @@ explícitas siempre.
 
 > *"Explícitas."*
 
-#### 🔵 A — Acuerdo
+### 🟢 C — Cambios
+
+- Arquitectura creada manualmente con todos los archivos vacíos.
+- Se descartó el `setup_proyecto.py` propuesto por la IA por innecesario.
+
+### 🔵 A — Acuerdo
 
 ✅ Arquitectura modular con una responsabilidad por archivo.  
 ✅ Todo en español: funciones, variables, constantes, docstrings.  
 ✅ Nomenclatura descriptiva (sin abreviaciones).  
-✅ Importaciones siempre explícitas.  
+✅ Importaciones siempre explícitas con prefijo `src.`.  
 ✅ `__init__.py` vacíos, sin reexportaciones.  
 ❌ `setup_proyecto.py` propuesto por la IA y rechazado por innecesario.
 
-#### 🟢 R — Resultado
+### 🟢 R — Resultado
 
 Arquitectura creada manualmente en el proyecto. Todos los archivos vacíos
 listos para rellenar módulo por módulo.
 
 ---
 
-### INTERACCIÓN 7 — Separación del main en módulos
+## INTERACCIÓN 2 — Separación del main en módulos de interfaz
 
-#### 🔵 S — Situación
+### 🔵 S — Situación
 
 Con la arquitectura vacía lista, se procedió a dividir el contenido del
 `main.py` existente en sus módulos correspondientes.
 
-#### 🔴 P — Problema
+### 🔴 P — Problema
 
 El `main.py` contenía en un solo archivo: los 7 estados ASCII, la cabecera,
 la función de limpiar pantalla, `mostrar_estado()` y el bucle de prueba.
 
-#### 🟠 E — Exploración
+### 🟠 E — Exploración
 
 **Distribución acordada antes de generar:**
 
@@ -104,7 +115,7 @@ la función de limpiar pantalla, `mostrar_estado()` y el bucle de prueba.
 | Bucle de prueba / menú | `interfaz/menu.py` |
 | `main()` | `ahorcado.py` |
 
-#### 🟢 C — Cambios
+### 🟢 C — Cambios
 
 Respecto al `main.py` original se añadió:
 
@@ -116,13 +127,13 @@ Respecto al `main.py` original se añadió:
 - `ValueError` en `mostrar_escena()` si `numero_fallos` está fuera de rango.
 - `TODO` comments en las acciones del menú pendientes de implementar.
 
-#### 🔵 A — Acuerdo
+### 🔵 A — Acuerdo
 
 ✅ Todo aceptado.  
 ✅ El alumno confirmó que realizó cambios propios en `dibujo.py` que no
    alteran la lógica del resto de módulos.
 
-#### 🟢 R — Resultado
+### 🟢 R — Resultado
 
 Cuatro archivos generados, verificados y listos:
 
@@ -133,16 +144,7 @@ Cuatro archivos generados, verificados y listos:
 
 ---
 
-## Catálogo de funciones generadas
-
-### `src/interfaz/dibujo.py`
-
-| Nombre | Tipo | Descripción |
-|---|---|---|
-| `ESTADOS` | `list[str]` | Lista con los 7 estados ASCII de la escena medieval |
-| `MAXIMO_FALLOS` | `int` | Constante con el máximo de fallos permitidos (6) |
-
----
+## Catálogo de funciones — Fase 2
 
 ### `src/interfaz/pantalla.py`
 
@@ -181,58 +183,12 @@ Cuatro archivos generados, verificados y listos:
 
 ---
 
-### `src/base_datos/` *(versión previa, pendiente de separar en módulos)*
-
-| Nombre | Tipo | Descripción |
-|---|---|---|
-| `_obtener_conexion()` | privada | Abre y devuelve la conexión SQLite |
-| `inicializar_base_datos()` | pública | Crea la tabla y puebla las palabras iniciales |
-| `obtener_palabra_aleatoria()` | pública | Devuelve una palabra aleatoria con filtros opcionales |
-| `obtener_todas_las_palabras()` | pública | Lista todas las palabras ordenadas por categoría |
-| `obtener_categorias()` | pública | Lista categorías únicas con conteo de palabras |
-| `insertar_palabra()` | pública | Inserta una nueva palabra en la BD |
-
-> ⚠️ Este módulo será separado en `conexion.py`, `inicializar.py`,
-> `consultas.py` e `insercion.py` en el siguiente commit.
-
----
-
-## Resumen de decisiones
+## Resumen de decisiones — Fase 2
 
 | Elemento | Propuesto | Decisión |
 |---|---|---|
-| Plataforma | CLI o interfaz gráfica | ✅ CLI con ASCII |
-| Árbol | Horca clásica | ✅ Árbol con hojas grande |
-| Figura | Palitos simples | ✅ Figura medieval detallada |
-| Espadachín | Con disparo al estado 6 | ❌ Eliminado |
-| Estado 6 | Corte por espadachín | ✅ Cuerda rota sola + SNAP! |
-| Mensaje estado 6 | HAS SIDO DERROTADO | ✅ Muerte por ahorcamiento |
-| Luna | Luna grande ASCII | ❌ Eliminada |
-| Suelo | Línea uniforme | ✅ Hierba + tierra diferenciada |
 | Nomenclatura | Sin especificar | ✅ Todo en español descriptivo |
-| Importaciones | Libres | ✅ Siempre explícitas |
+| Importaciones | Libres | ✅ Siempre explícitas con `src.` |
 | `__init__.py` | Con reexportaciones | ❌ Vacíos |
 | `setup_proyecto.py` | Propuesto por la IA | ❌ Rechazado por innecesario |
 | Arquitectura | Todo en un archivo | ✅ Un archivo por responsabilidad |
-
----
-
-## Archivos generados hasta ahora
-
-| Archivo | Ruta | Estado |
-|---|---|---|
-| `dibujo.py` | `src/interfaz/dibujo.py` | ✅ Listo |
-| `pantalla.py` | `src/interfaz/pantalla.py` | ✅ Listo |
-| `menu.py` | `src/interfaz/menu.py` | ✅ Listo |
-| `ahorcado.py` | `ahorcado.py` | ✅ Listo |
-| `base_datos.py` | `src/base_datos/` | 🔄 Pendiente de separar |
-| `conexion.py` | `src/base_datos/conexion.py` | ⏳ Próximo |
-| `inicializar.py` | `src/base_datos/inicializar.py` | ⏳ Próximo |
-| `consultas.py` | `src/base_datos/consultas.py` | ⏳ Próximo |
-| `insercion.py` | `src/base_datos/insercion.py` | ⏳ Próximo |
-| `estado.py` | `src/juego/estado.py` | ⏳ Pendiente |
-| `logica.py` | `src/juego/logica.py` | ⏳ Pendiente |
-| `bucle.py` | `src/juego/bucle.py` | ⏳ Pendiente |
-| `letra.py` | `src/validaciones/letra.py` | ⏳ Pendiente |
-| `palabra.py` | `src/validaciones/palabra.py` | ⏳ Pendiente |
-
