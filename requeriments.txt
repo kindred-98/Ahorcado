@@ -3,19 +3,20 @@
 #  Dependencias del proyecto
 # ============================================================
 
-# sqlite3 viene incluido en la librería estándar de Python 3.
-# No requiere instalación adicional.
-#
-# Para instalar dependencias futuras:
+# Para instalar dependencias de desarrollo:
 #   pip install -r requirements.txt
+
+# ── Testing ──────────────────────────────────────────────────
+pytest==9.0.2
+pytest-cov==7.0.0
 
 # ── Librería estándar (incluida en Python 3.12+) ─────────────
 # sqlite3      — Base de datos embebida
 # os           — Interacción con el sistema operativo
-# sys          — Parámetros del sistema
-# random       — Selección aleatoria de palabras
 # unicodedata  — Normalización de caracteres (tildes)
+# dataclasses  — Dataclass para EstadoPartida
+# typing       — Tipado con Optional
 
-# ── Sin dependencias externas requeridas ─────────────────────
-# Este proyecto no requiere paquetes de terceros.
+# ── Sin dependencias externas de producción ──────────────────
+# Este proyecto no requiere paquetes de terceros en producción.
 # Funciona con Python 3.12+ sin instalación adicional.
