@@ -12,6 +12,6 @@ def _accion_salir() -> None:
     Limpia la pantalla y muestra el mensaje de despedida.
     """
     limpiar_pantalla()
-    print("\n  ╔══════════════════════════════════════════════╗")
-    print("  ║   ⚔  Hasta la próxima, caballero...  ⚔      ║")
+    print("\n╔══════════════════════════════════════════════╗")
+    print("  ║   ⚔  Hasta la próxima, gran jugador...  ⚔    ║")
     print("  ╚══════════════════════════════════════════════╝\n")

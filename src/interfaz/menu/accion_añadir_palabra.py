@@ -13,6 +13,7 @@ from src.base_datos.insercion.palabra_ya_existe  import palabra_ya_existe
 from src.validaciones.palabra.validar_palabra    import validar_palabra
 from src.validaciones.palabra.validar_categoria  import validar_categoria
 from src.validaciones.palabra.validar_dificultad import validar_dificultad
+from src.validaciones.palabra.constantes         import CATEGORIAS_VALIDAS, DIFICULTADES_VALIDAS
 
 
 def _accion_añadir_palabra() -> None:
@@ -25,16 +26,19 @@ def _accion_añadir_palabra() -> None:
     print("  ║       📖  AÑADIR NUEVA PALABRA               ║")
     print("  ╚══════════════════════════════════════════════╝\n")
 
+    categorias_texto  = " / ".join(sorted(CATEGORIAS_VALIDAS))
+    dificultades_texto = " / ".join(sorted(DIFICULTADES_VALIDAS))
+
     nueva_palabra = _pedir_campo_validado(
         etiqueta  = "Palabra",
         validador = validar_palabra,
     )
     nueva_categoria = _pedir_campo_validado(
-        etiqueta  = "Categoría (animales / armas / lugares / personajes)",
+        etiqueta  = f"Categoría ({categorias_texto})",
         validador = validar_categoria,
     )
     nueva_dificultad = _pedir_campo_validado(
-        etiqueta  = "Dificultad (facil / medio / dificil)",
+        etiqueta  = f"Dificultad ({dificultades_texto})",
         validador = validar_dificultad,
     )
 

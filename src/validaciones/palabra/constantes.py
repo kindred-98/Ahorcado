@@ -12,12 +12,14 @@ CATEGORIAS_VALIDAS: frozenset[str] = frozenset({
     "armas",
     "lugares",
     "personajes",
+    "otros",
 })
 
 DIFICULTADES_VALIDAS: frozenset[str] = frozenset({
     "facil",
     "medio",
     "dificil",
+    "legendario",
 })
 
 CARACTERES_VALIDOS_PALABRA: frozenset[str] = frozenset(

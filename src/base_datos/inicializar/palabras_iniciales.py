@@ -34,4 +34,9 @@ PALABRAS_INICIALES: list[tuple[str, str, str]] = [
     ("hechicero",   "personajes", "dificil"),
     ("arquero",     "personajes", "medio"),
     ("herrero",     "personajes", "dificil"),
+    
+    # Otros — legendario
+    ("excalibur",   "otros",      "legendario"),
+    ("merlín",      "otros",      "legendario"),
+    ("grial",       "otros",      "legendario"),
 ]

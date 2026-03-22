@@ -21,6 +21,9 @@ def test_categoria_lugares_valida():
 def test_categoria_personajes_valida():
     assert validar_categoria("personajes") is None
 
+def test_categoria_otros_valida():
+    assert validar_categoria("otros") is None
+
 def test_categoria_mayusculas_valida():
     assert validar_categoria("ANIMALES") is None
 

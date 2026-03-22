@@ -1,0 +1,7 @@
+[report]
+omit =
+    tests/conftest.py
+
+[tool:pytest]
+filterwarnings =
+    ignore::ResourceWarning

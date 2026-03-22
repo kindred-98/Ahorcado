@@ -18,6 +18,9 @@ def test_dificultad_medio_valida():
 def test_dificultad_dificil_valida():
     assert validar_dificultad("dificil") is None
 
+def test_dificultad_legendario_valida():
+    assert validar_dificultad("legendario") is None
+
 def test_dificultad_mayusculas_valida():
     assert validar_dificultad("FACIL") is None
 
