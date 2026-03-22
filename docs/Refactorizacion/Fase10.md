@@ -224,3 +224,20 @@ la pregunta de jugar otra partida.
 | Etiquetas del menú | ✅ Dinámicas desde constantes, no hardcodeadas |
 | Animación victoria | ✅ 4 frames ASCII con `time.sleep` y mocks en tests |
 | Arte ASCII victoria | ✅ Personalizado por el alumno |
+
+ ## Resumen final de todo lo que hice con la ayuda de la IA
+
+El proyecto está terminado, resumen de todo lo que construimos:
+El Ahorcado Medieval — entregable completo:
+
+✅ Juego CLI funcional con arte ASCII medieval personalizado
+✅ Animación de victoria
+✅ Base de datos SQLite con 23 palabras en 5 categorías y 4 dificultades
+✅ Arquitectura modular — 61 archivos, uno por función/clase
+✅ 198 tests — 100% de cobertura
+✅ Documentación SPECAR en 10 fases
+✅ README profesional con badges
+✅ requirements.txt, .gitignore, .coveragerc, pytest.ini
+
+PD: Eh tardado en hacer el proyecto en 4 dias en varias secciones de interaccion con la IA, 
+para mayor entendimiento del codigo y de los cambios aplicados.
