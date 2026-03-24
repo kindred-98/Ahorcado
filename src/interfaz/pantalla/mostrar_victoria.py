@@ -104,6 +104,7 @@ def _mostrar_pantalla_final(palabra_secreta: str) -> None:
     """
     print("\n")
     print("  ╔══════════════════════════════════════════════════════════╗")
+    print("  ║                       ¡¡ VICTORIA !!                     ║")
     print("  ║                                                          ║")
     print("  ║   ⚔   🪢❌ La cuerda se queda guardada… ¡ganaste!   ⚔    ║")
     print("  ║                                                          ║")
@@ -113,5 +114,5 @@ def _mostrar_pantalla_final(palabra_secreta: str) -> None:
     print("  ║                                                          ║")
     print("  ╚══════════════════════════════════════════════════════════╝")
     print("\n")
-    
+
      
