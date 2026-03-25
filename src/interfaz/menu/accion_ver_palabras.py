@@ -16,8 +16,8 @@ def _accion_ver_palabras() -> None:
     """
     limpiar_pantalla()
     print("\n  ╔══════════════════════════════════════════════╗")
-    print("  ║       📜  PALABRAS EN LA BASE DE DATOS       ║")
-    print("  ╚══════════════════════════════════════════════╝\n")
+    print("    ║       📜  PALABRAS EN LA BASE DE DATOS       ║")
+    print("    ╚══════════════════════════════════════════════╝\n")
 
     lista_palabras = obtener_todas_las_palabras()
 

@@ -26,5 +26,6 @@ def _mostrar_turno(estado: EstadoPartida) -> None:
     )
     mostrar_mensaje(
         f"  Categoría: {estado.categoria}  |  "
-        f"Intentos restantes: {intentos_restantes(estado)}"
+        f"Intentos restantes: {intentos_restantes(estado)}\n"
+        f"  💡 Escribe una letra o la palabra completa si ya la sabes"
     )
