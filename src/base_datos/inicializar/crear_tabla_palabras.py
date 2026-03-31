@@ -22,3 +22,4 @@ def _crear_tabla_palabras(cursor: sqlite3.Cursor) -> None:
             dificultad TEXT    NOT NULL
         )
     """)
+    

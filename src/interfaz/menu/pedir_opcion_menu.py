@@ -22,4 +22,4 @@ def pedir_opcion_menu() -> str:
         if opcion in OPCIONES_VALIDAS:
             return opcion
 
-        mostrar_error("Opción no válida. Elige entre 1 y 4.")
+        mostrar_error("Opción no válida. Elige entre 1 y 3.")

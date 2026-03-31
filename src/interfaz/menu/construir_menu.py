@@ -19,9 +19,8 @@ def _construir_menu() -> str:
         "  ╠══════════════════════════════════════════════╣\n"
         "  ║                                              ║\n"
         "  ║   1)  ⚔  Jugar                              ║\n"
-        "  ║   2)  📖  Añadir palabra                    ║\n"
-        "  ║   3)  📜  Ver palabras                      ║\n"
-        "  ║   4)  🚪  Salir                             ║\n"
+        "  ║   2)  📚  Gestionar palabras                ║\n"
+        "  ║   3)  🚪  Salir                             ║\n"
         "  ║                                              ║\n"
         "  ╚══════════════════════════════════════════════╝\n"
     )

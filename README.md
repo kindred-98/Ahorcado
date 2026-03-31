@@ -1,4 +1,6 @@
-<div align="center">
+
+<div align="center"> 
+
 # ⚔️ EL AHORCADO MEDIEVAL
 
 **Juego del Ahorcado con temática medieval desarrollado en Python**  
@@ -6,14 +8,15 @@
 
 ---
 
-![Python](https://img.shields.io/badge/Python-3.12%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Tests](https://img.shields.io/badge/Tests-198%20passed-2ea44f?style=for-the-badge&logo=pytest&logoColor=white)
-![Coverage](https://img.shields.io/badge/Coverage-100%25-brightgreen?style=for-the-badge&logo=codecov&logoColor=white)
-![SQLite](https://img.shields.io/badge/SQLite-Base%20de%20datos-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
-![Architecture](https://img.shields.io/badge/Architecture-1%20file%20per%20function-blueviolet?style=for-the-badge)
-![Methodology](https://img.shields.io/badge/Docs-SPECAR-orange?style=for-the-badge)
+[![Python](https://img.shields.io/badge/Python-3.12%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![Tests](https://img.shields.io/badge/Tests-198%20passed-2ea44f?style=for-the-badge&logo=pytest&logoColor=white)](https://pytest.org)
+[![Coverage](https://img.shields.io/badge/Coverage-100%25-brightgreen?style=for-the-badge&logo=codecov&logoColor=white)](https://github.com/pytest-dev/pytest-cov)
+[![SQLite](https://img.shields.io/badge/SQLite-Base%20de%20datos-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://docs.python.org/3/library/sqlite3.html)
+[![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)](https://github.com/kindred-98/Ahorcado)
+[![Architecture](https://img.shields.io/badge/Architecture-1%20file%20per%20function-blueviolet?style=for-the-badge)](https://github.com/kindred-98/Ahorcado)
+[![Methodology](https://img.shields.io/badge/Docs-SPECAR-orange?style=for-the-badge)](docs/)
+
 </div>
 
 ---
@@ -51,6 +54,22 @@ El proyecto fue construido con foco en:
 
 ## 🎮 Demo
 
+### Opciones del menú principal
+
+```
+  ╔══════════════════════════════════════════════╗
+  ║       ⚔   EL AHORCADO MEDIEVAL   ⚔          ║
+  ╠══════════════════════════════════════════════╣
+  ║                                              ║
+  ║   1)  ⚔  Jugar                               ║
+  ║   2)  📖 gestionar palabras                  ║
+  ║   3)  🚪 Salir                               ║
+  ║                                              ║
+  ╚══════════════════════════════════════════════╝
+```
+
+### Partida en curso — estado inicial
+
 ```
   ╔════════════════════════════════════════════════════════════════════╗
   ║                   ✦   EL AHORCADO MEDIEVAL   ✦                    ║
@@ -66,6 +85,29 @@ El proyecto fue construido con foco en:
  &@@@@@@@@@@@@@& /________________________________________\
   &@@@@@@@@@@@@&                       |
                                        |
+```
+
+### Partida en curso — con fallos acumulados
+
+```
+  ╔════════════════════════════════════════════════════════════════════╗
+  ║                   ✦   EL AHORCADO MEDIEVAL   ✦                    ║
+  ║                                                                    ║
+  ║   Palabra :  _ A _ _ _ _ _ _                                       ║
+  ║   Letras usadas: A E I O                                           ║
+  ║   Fallos: 3 / 6                                                    ║
+  ╚════════════════════════════════════════════════════════════════════╝
+
+    &&@@@@@@@&&
+   &@@@@@@@@@@@&
+  &@@@@@@@@@@@@@&&____________________
+ &@@@@@@@@@@@@@@& /   ¡Me estás        \
+ &@@@@@@@@@@@@@& /    fallando, noble!  \
+  &@@@@@@@@@@@@&\____________________/
+                       |
+                      \O/
+                       |
+                      / \
 ```
 
 ---
@@ -170,21 +212,6 @@ pip install -r requirements.txt
 python ahorcado.py
 ```
 
-### Opciones del menú principal
-
-```
-  ╔══════════════════════════════════════════════╗
-  ║       ⚔   EL AHORCADO MEDIEVAL   ⚔          ║
-  ╠══════════════════════════════════════════════╣
-  ║                                              ║
-  ║   1)  ⚔  Jugar                               ║
-  ║   2)  📖  Añadir palabra                     ║
-  ║   3)  📜  Ver palabras                       ║
-  ║   4)  🚪  Salir                              ║
-  ║                                              ║
-  ╚══════════════════════════════════════════════╝
-```
-
 ### Categorías disponibles
 
 | Categoría | Descripción |
@@ -231,8 +258,8 @@ pytest tests/ --cov=src --cov-report=term-missing
 **Resultados actuales:**
 
 ```
-========================= test session starts =========================
-platform win32 -- Python 3.14.3, pytest-9.0.2
+========================= test session results =========================
+platform win32 -- Python 3.12+, pytest-9.0.2
 
 tests/base_datos/         ...........................   PASSED
 tests/interfaz/pantalla/  ......................        PASSED
@@ -241,7 +268,7 @@ tests/juego/logica/       ....................         PASSED
 tests/validaciones/       ........................................PASSED
 tests/test_cobertura_completa.py  ..................   PASSED
 
-============= 198 passed in 1.96s =============
+============= 208 passed in 2.06s =============
 ---------- coverage: 100% ----------
 ```
 
@@ -307,7 +334,9 @@ Ahorcado/
 │   │   └── insercion/
 │   │       ├── normalizar_dificultad.py
 │   │       ├── insertar_palabra.py
-│   │       └── palabra_ya_existe.py
+│   │       ├── palabra_ya_existe.py
+│   │       ├── actualizar_palabra.py
+│   │       └── eliminar_palabra.py
 │   │
 │   └── interfaz/
 │       ├── dibujo/
@@ -333,7 +362,10 @@ Ahorcado/
 │           ├── accion_añadir_palabra.py    # Etiquetas dinámicas desde constantes
 │           ├── accion_ver_palabras.py
 │           ├── accion_salir.py
-│           └── construir_menu.py
+│           ├── construir_menu.py
+│           ├── accion_eliminar_palabra.py
+│           ├── accion_gestionar_palabras.py
+│           └── accion_modificar_palabra.py
 │
 ├── tests/
 │   ├── conftest.py
@@ -412,16 +444,17 @@ cubriendo 10 fases del desarrollo desde el arte ASCII hasta las mejoras finales.
 - ✅ Documentación SPECAR en 10 fases
 
 ---
+
 <div align="center">
 
 ## 👨‍💻 Autor
 
-**SHIKAMARU**
+**A.D.E.V.**
 
 *Proyecto educativo del Módulo 2 — Estrategias de Generación de Código con IA · Dicampus*  
 *Enfocado en arquitectura limpia, testing automatizado y principio de responsabilidad única.*
 
-[![GitHub](https://img.shields.io/badge/GitHub-kindred--98-181717?style=for-the-badge&logo=github)](https://github.com/kindred-98/Ahorcado)
+[![GitHub](https://img.shields.io/badge/GitHub-kindred--98-181717?style=for-the-badge&logo=github)](https://github.com/kindred-98)
 
 ---
 
@@ -433,5 +466,6 @@ Este proyecto está distribuido bajo la licencia **MIT**.
 
 *Hecho con ⚔️ Python y arquitectura medieval*
 
-⭐ Si este proyecto te resulta útil, considera dejarle una estrella en GitHub
+⭐ Si este proyecto te resulta útil, considera dejarle una estrella en GitHu
+
 </div>
