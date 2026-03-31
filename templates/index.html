@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Ahorcado Medieval</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>⚔ El Ahorcado Medieval ⚔</h1>
+
+        <!-- MENÚ PRINCIPAL -->
+        <div id="menu" class="seccion activa">
+            <button onclick="mostrarPantalla('dificultad')">🎮 Jugar</button>
+            <button onclick="mostrarPantalla('anadir')">➕ Añadir Palabra</button>
+            <button onclick="mostrarPantalla('ver')">📋 Ver Palabras</button>
+        </div>
+
+        <!-- SELECCIÓN DIFICULTAD -->
+        <div id="dificultad" class="seccion">
+            <h2>Selecciona Dificultad</h2>
+            <button onclick="iniciarJuego('facil')" style="color:#27ae60">Fácil</button>
+            <button onclick="iniciarJuego('medio')" style="color:#f39c12">Medio</button>
+            <button onclick="iniciarJuego('dificil')" style="color:#e74c3c">Difícil</button>
+            <button onclick="iniciarJuego('legendario')" style="color:#8e44ad">Legendario</button>
+            <button onclick="iniciarJuego('')" style="color:#c7a44a">🎲 Aleatorio</button>
+            <button class="volver" onclick="mostrarPantalla('menu')">← Volver</button>
+        </div>
+
+        <!-- JUEGO -->
+        <div id="juego" class="seccion">
+            <div class="info-partida">
+                <span id="info-categoria"></span> | <span id="info-dificultad"></span>
+            </div>
+            <canvas id="canvas" width="300" height="280"></canvas>
+            <div id="palabra" class="palabra"></div>
+            <div id="mensaje" class="mensaje"></div>
+            <div id="fallos" class="fallos"></div>
+            <div id="teclado" class="teclado"></div>
+            <button class="volver" onclick="mostrarPantalla('menu')">← Menú</button>
+        </div>
+
+        <!-- RESULTADO -->
+        <div id="resultado" class="seccion">
+            <h2 id="resultado-titulo"></h2>
+            <p id="resultado-palabra"></p>
+            <p id="resultado-fallos"></p>
+            <button onclick="mostrarPantalla('dificultad')">🔄 Jugar de nuevo</button>
+            <button onclick="mostrarPantalla('menu')">🏠 Menú</button>
+        </div>
+
+        <!-- AÑADIR PALABRA -->
+        <div id="anadir" class="seccion">
+            <h2>Añadir Palabra</h2>
+            <input type="text" id="nueva-palabra" placeholder="Palabra" maxlength="30">
+            <input type="text" id="nueva-categoria" placeholder="Categoría">
+            <select id="nueva-dificultad">
+                <option value="">Dificultad...</option>
+                <option value="facil">Fácil</option>
+                <option value="medio">Medio</option>
+                <option value="dificil">Difícil</option>
+                <option value="legendario">Legendario</option>
+            </select>
+            <button onclick="anadirPalabra()">💾 Guardar</button>
+            <p id="anadir-msg"></p>
+            <button class="volver" onclick="mostrarPantalla('menu')">← Volver</button>
+        </div>
+
+        <!-- VER PALABRAS -->
+        <div id="ver" class="seccion">
+            <h2>Palabras Registradas</h2>
+            <div id="lista-palabras"></div>
+            <button class="volver" onclick="mostrarPantalla('menu')">← Volver</button>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
